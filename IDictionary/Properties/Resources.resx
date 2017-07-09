@@ -118,10 +118,48 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="deleteButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deleteButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="searchBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searchBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Dtafalonso_Android_Lollipop_Dictionary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dtafalonso-Android-Lollipop-Dictionary.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Untitled31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Untitled32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="longsearchBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\longsearchBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settingIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settingIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deleteButtonClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deleteButtonClicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WelcomeDoc" xml:space="preserve">
+    <value>: )  欢迎使用词典
+: ]  本词典使用金山词霸API
+: |  请在下方文本框输入您要翻译的内容
+: |  按回车键进行翻译
+: (  支持英译汉（部分支持汉译英）
+: }  发现Bug可联系我</value>
+  </data>
+  <data name="menuIconClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuIconCliked4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settingIconClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settingIconClicked2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Dictionary</value>
+  </data>
+  <data name="InitialAccent" xml:space="preserve">
+    <value>| Hello |</value>
+  </data>
+  <data name="SeparatedLine" xml:space="preserve">
+    <value>--------------------------------------</value>
   </data>
 </root>

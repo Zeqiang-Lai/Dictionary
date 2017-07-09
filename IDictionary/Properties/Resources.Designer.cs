@@ -61,6 +61,35 @@ namespace IDictionary.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Dictionary 的本地化字符串。
+        /// </summary>
+        internal static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap deleteButton {
+            get {
+                object obj = ResourceManager.GetObject("deleteButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap deleteButtonClicked {
+            get {
+                object obj = ResourceManager.GetObject("deleteButtonClicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Icon Dtafalonso_Android_Lollipop_Dictionary {
@@ -71,12 +100,94 @@ namespace IDictionary.Properties {
         }
         
         /// <summary>
+        ///   查找类似 | Hello | 的本地化字符串。
+        /// </summary>
+        internal static string InitialAccent {
+            get {
+                return ResourceManager.GetString("InitialAccent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap Untitled31 {
+        internal static System.Drawing.Bitmap longsearchBox {
             get {
-                object obj = ResourceManager.GetObject("Untitled31", resourceCulture);
+                object obj = ResourceManager.GetObject("longsearchBox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap menuIcon {
+            get {
+                object obj = ResourceManager.GetObject("menuIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap menuIconClicked {
+            get {
+                object obj = ResourceManager.GetObject("menuIconClicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap searchBox {
+            get {
+                object obj = ResourceManager.GetObject("searchBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 -------------------------------------- 的本地化字符串。
+        /// </summary>
+        internal static string SeparatedLine {
+            get {
+                return ResourceManager.GetString("SeparatedLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap settingIcon {
+            get {
+                object obj = ResourceManager.GetObject("settingIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap settingIconClicked {
+            get {
+                object obj = ResourceManager.GetObject("settingIconClicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 : )  欢迎使用词典
+        ///: ]  本词典使用金山词霸API
+        ///: |  请在下方文本框输入您要翻译的内容
+        ///: |  按回车键进行翻译
+        ///: (  支持英译汉（部分支持汉译英）
+        ///: }  发现Bug可联系我 的本地化字符串。
+        /// </summary>
+        internal static string WelcomeDoc {
+            get {
+                return ResourceManager.GetString("WelcomeDoc", resourceCulture);
             }
         }
     }

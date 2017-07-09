@@ -111,22 +111,34 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Untitled3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Untitled.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Untitled31.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Untitled32.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icon.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Dtafalonso-Android-Lollipop-Dictionary.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\longsearchBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteButtonClicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingIconClicked2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuIconCliked4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
