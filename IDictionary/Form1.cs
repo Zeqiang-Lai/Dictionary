@@ -33,6 +33,7 @@ namespace IDictionary
                 transBox.Text = Properties.Resources.WelcomeDoc;
                 shortInputBox.Text = string.Empty;
                 searchPlusPanel.Visible = true;
+                shortInputBox.Focus();
             }
             else
             {
