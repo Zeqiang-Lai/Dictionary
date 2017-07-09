@@ -17,12 +17,12 @@ namespace IDictionary
             {
                 e.Handled = true;
                 string query = inputBox.Text;
-                ShowTrans(query);
+                ShowTrans(query,true);
                 inputBox.Text = string.Empty;
             }
         }
 
-        private void ShowTrans(string query)
+        private void ShowTrans(string query,Boolean isAdd)
         {
             hisPanel.Visible = false;
 
@@ -40,7 +40,8 @@ namespace IDictionary
                 IcibaApi api = new IcibaApi();
                 TranslationResult result = api.GetTransResult(query);
 
-                hisListBox.Items.Add(query);
+                if(isAdd) hisListBox.Items.Add(query);
+
                 label1.Text = result.key;   //单词英文
                 if (result.psLen > 0)
                     label2.Text = "| " + result.ps[0] + " |";   // 音标
@@ -67,7 +68,7 @@ namespace IDictionary
             if(index != -1)
             {
                 string query = hisListBox.SelectedItem.ToString();
-                ShowTrans(query);
+                ShowTrans(query,false);
                 hisPanel.Visible = false;
             }
             
