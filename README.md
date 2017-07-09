@@ -1,4 +1,4 @@
-# IDictionary
+# Dictionary
 a simple application for looking up words, using Iciba translation Api, powered by winform.
 
 ## Screenshot
