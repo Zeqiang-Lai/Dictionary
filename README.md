@@ -27,3 +27,6 @@ a simple application for looking up words, using Iciba translation Api, powered 
 
 1. 第一版，支持查词
 2. ...
+
+## Download
+[Just for Windows](https://github.com/Zeqiang-Lai/IDictionary/releases)
