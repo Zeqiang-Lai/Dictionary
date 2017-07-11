@@ -61,6 +61,16 @@ namespace IDictionary.Properties {
         }
         
         /// <summary>
+        ///   查找类似 IDictionary v1.2.0                                                               --------------------
+        ///This is a simple tool to look up a simple word 的本地化字符串。
+        /// </summary>
+        internal static string about {
+            get {
+                return ResourceManager.GetString("about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Dictionary 的本地化字符串。
         /// </summary>
         internal static string AppName {
@@ -96,6 +106,34 @@ namespace IDictionary.Properties {
             get {
                 object obj = ResourceManager.GetObject("Dtafalonso_Android_Lollipop_Dictionary", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 历史纪录已清空 的本地化字符串。
+        /// </summary>
+        internal static string emptyHis {
+            get {
+                return ResourceManager.GetString("emptyHis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 您可以发送邮件至：idictionary.app@gmail.com
+        ///反馈您发现的Bug，或向我们提出建议。 的本地化字符串。
+        /// </summary>
+        internal static string feedBackIntro {
+            get {
+                return ResourceManager.GetString("feedBackIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 将在后续版本中加入此功能。 的本地化字符串。
+        /// </summary>
+        internal static string fontSetStr {
+            get {
+                return ResourceManager.GetString("fontSetStr", resourceCulture);
             }
         }
         
@@ -178,6 +216,15 @@ namespace IDictionary.Properties {
         }
         
         /// <summary>
+        ///   查找类似 https://github.com/Zeqiang-Lai/IDictionary/releases 的本地化字符串。
+        /// </summary>
+        internal static string updateLink {
+            get {
+                return ResourceManager.GetString("updateLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 : )  欢迎使用词典
         ///: ]  本词典使用金山词霸API
         ///: |  请在下方文本框输入您要翻译的内容
@@ -188,6 +235,80 @@ namespace IDictionary.Properties {
         internal static string WelcomeDoc {
             get {
                 return ResourceManager.GetString("WelcomeDoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Aalborg
+        ///Aalesund
+        ///Aalii
+        ///Aaliis
+        ///Aals
+        ///Aalst
+        ///Aalto
+        ///Aam
+        ///Aamsi
+        ///Aandahl
+        ///A-and-r
+        ///Aani
+        ///Aao
+        ///Aap
+        ///Aapss
+        ///Aaqbiye
+        ///Aar
+        ///Aara
+        ///Aarau
+        ///Aarc
+        ///Aardvark
+        ///Aardvarks
+        ///Aardwolf
+        ///Aardwolves
+        ///Aaren
+        ///Aargau
+        ///Aargh
+        ///Aarhus
+        ///Aarika
+        ///Aaron
+        ///Aaronic
+        ///Aaronical
+        ///Aaronite
+        ///Aaronitic
+        ///Aaron&apos;s-beard
+        ///Aaronsburg
+        ///Aaronson
+        ///Aarp
+        ///Aarrgh
+        ///Aarrghh
+        ///Aaru
+        ///Aas
+        ///A&apos;asia
+        ///Aasvogel
+        ///Aasvogels
+        ///Aau
+        ///Aaup
+        ///Aauw
+        ///Aavso
+        ///Aax
+        ///A-axes
+        ///A-axis
+        ///Ab
+        ///Ab-
+        ///Aba
+        ///Ababa
+        ///Ababdeh
+        ///Ababua
+        ///Abac
+        ///Abaca
+        ///Abacay
+        ///Abacas
+        ///Abacate
+        ///Abacaxi
+        ///Abaci
+        ///Abacin [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string words {
+            get {
+                return ResourceManager.GetString("words", resourceCulture);
             }
         }
     }

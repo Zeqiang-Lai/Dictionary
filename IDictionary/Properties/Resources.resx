@@ -162,4 +162,24 @@
   <data name="SeparatedLine" xml:space="preserve">
     <value>--------------------------------------</value>
   </data>
+  <data name="words" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\words.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="emptyHis" xml:space="preserve">
+    <value>历史纪录已清空</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>IDictionary v1.2.0                                                               --------------------
+This is a simple tool to look up a simple word</value>
+  </data>
+  <data name="feedBackIntro" xml:space="preserve">
+    <value>您可以发送邮件至：idictionary.app@gmail.com
+反馈您发现的Bug，或向我们提出建议。</value>
+  </data>
+  <data name="fontSetStr" xml:space="preserve">
+    <value>将在后续版本中加入此功能。</value>
+  </data>
+  <data name="updateLink" xml:space="preserve">
+    <value>https://github.com/Zeqiang-Lai/IDictionary/releases</value>
+  </data>
 </root>
