@@ -189,7 +189,7 @@ namespace IDictionary
                 Match m = r.Match(dic);
                 int matchCount = 0;
 
-                while (m.Success && matchCount < 10)
+                while (m.Success && matchCount < 12)
                 {
                     hisListBox.Items.Add(m.Value);
                     m = m.NextMatch();
