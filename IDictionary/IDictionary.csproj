@@ -148,6 +148,7 @@
   <ItemGroup>
     <Content Include="Dtafalonso-Android-Lollipop-Dictionary.ico" />
     <None Include="Resources\words.txt" />
+    <None Include="Resources\Untitled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

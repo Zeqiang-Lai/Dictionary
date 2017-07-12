@@ -18,7 +18,7 @@ namespace IDictionary
             string xmlResult = string.Empty;
 
             WebClient wc = new WebClient();
-            wc.Encoding = System.Text.Encoding.UTF8;
+            wc.Encoding = Encoding.UTF8;
             try
             {
                 xmlResult = wc.DownloadString(url);

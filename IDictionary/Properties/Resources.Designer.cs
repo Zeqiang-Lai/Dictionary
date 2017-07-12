@@ -61,7 +61,7 @@ namespace IDictionary.Properties {
         }
         
         /// <summary>
-        ///   查找类似 IDictionary v1.2.0                                                               --------------------
+        ///   查找类似 IDictionary v1.3.0                                      --------------------
         ///This is a simple tool to look up a simple word 的本地化字符串。
         /// </summary>
         internal static string about {
@@ -129,11 +129,11 @@ namespace IDictionary.Properties {
         }
         
         /// <summary>
-        ///   查找类似 将在后续版本中加入此功能。 的本地化字符串。
+        ///   查找类似 访问历史文件出错，请尝试已管理员身份运行 的本地化字符串。
         /// </summary>
-        internal static string fontSetStr {
+        internal static string fileError {
             get {
-                return ResourceManager.GetString("fontSetStr", resourceCulture);
+                return ResourceManager.GetString("fileError", resourceCulture);
             }
         }
         
@@ -216,6 +216,16 @@ namespace IDictionary.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Untitled {
+            get {
+                object obj = ResourceManager.GetObject("Untitled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 https://github.com/Zeqiang-Lai/IDictionary/releases 的本地化字符串。
         /// </summary>
         internal static string updateLink {
@@ -249,7 +259,6 @@ namespace IDictionary.Properties {
         ///Aam
         ///Aamsi
         ///Aandahl
-        ///A-and-r
         ///Aani
         ///Aao
         ///Aap
@@ -273,7 +282,6 @@ namespace IDictionary.Properties {
         ///Aaronical
         ///Aaronite
         ///Aaronitic
-        ///Aaron&apos;s-beard
         ///Aaronsburg
         ///Aaronson
         ///Aarp
@@ -289,10 +297,7 @@ namespace IDictionary.Properties {
         ///Aauw
         ///Aavso
         ///Aax
-        ///A-axes
-        ///A-axis
         ///Ab
-        ///Ab-
         ///Aba
         ///Ababa
         ///Ababdeh
@@ -304,7 +309,11 @@ namespace IDictionary.Properties {
         ///Abacate
         ///Abacaxi
         ///Abaci
-        ///Abacin [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///Abacinate
+        ///Abacination
+        ///Abacisci
+        ///Abaciscus
+        ///Abacis [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string words {
             get {

@@ -3,47 +3,81 @@ using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.IO;
+using System.Drawing;
 
 namespace IDictionary
 {
     public partial class Form1 : Form
     {
         string dic = string.Empty;
+        int maxSuggest = 12;
+        private string hisPath = "history.txt";
+    
         List<string> history = new List<string>();
         IcibaApi api = new IcibaApi();
         FileProcesser fileIO = new FileProcesser();
+        Setting Setting;
 
         public Form1()
         {
             InitializeComponent();
             dic = Properties.Resources.words;
-            history = fileIO.GetHistoryList();
+            //dic = File.ReadAllText("C:/Users/91632/Desktop/words.txt")
+            LoadSetting();
         }
 
-        private void inputBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void LoadSetting()
         {
-            if (e.KeyChar == '\r')
+            Setting = fileIO.GetSettingFromFile();
+            LoadFont();
+            LoadHistory();
+            LoadSearchSetting();
+        }
+
+        private void LoadSearchSetting()
+        {
+            this.maxSuggest = Setting.maxSuggest;
+        }
+
+        private void LoadFont()
+        {
+            this.titileLbl.Font = Setting.titleFont;
+            this.accentLbl.Font = Setting.accentFont;
+            this.transBox.Font = Setting.transFont;
+
+            this.titleFontEditLbl.Font = Setting.titleFont;
+            this.accentFontEditLbl.Font = Setting.accentFont;
+            this.transFontEditlbl.Font = Setting.transFont;
+        }
+
+        private void LoadHistory()
+        {
+            try
             {
-                e.Handled = true;
-                string query = inputBox.Text;           
-                ShowTrans(query);
-                shortInputBox.Focus();
+                history = fileIO.GetHistoryList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Properties.Resources.fileError);
+                throw;
             }
         }
 
         private void ShowTrans(string query)
         {
-            query = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(query);
+            string addedQuery = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(query);
+            query = query.ToLower();
             inputBox.Text = string.Empty;
             shortInputBox.Text = string.Empty;
 
             hisPanel.Visible = false;
+            settingPanel.Visible = false;
             searchPlusPanel.Visible = true;
 
             if (query.Length == 0)
             {
-                label1.Text = Properties.Resources.AppName;
-                label2.Text = Properties.Resources.InitialAccent;
+                titileLbl.Text = Properties.Resources.AppName;
+                accentLbl.Text = Properties.Resources.InitialAccent;
                 transBox.Text = Properties.Resources.WelcomeDoc;
                 searchPlusPanel.Visible = true;
                 shortInputBox.Focus();
@@ -52,20 +86,21 @@ namespace IDictionary
             {
                 TranslationResult result = api.GetTransResult(query);
 
-                if (!history.Contains(query)) history.Add(query);
+                if (!history.Contains(addedQuery)) history.Add(addedQuery);
 
                 if (result.key.Length < 10)
-                    label1.Font = Setting.titleFont;
+                    titileLbl.Font = Setting.titleFont;
                 else if (result.key.Length < 15)
-                    label1.Font = Setting.stitleFont;
+                    titileLbl.Font = Setting.stitleFont;
                 else
-                    label1.Font = Setting.sstitleFont;
-                label1.Text = result.key;   //单词英文
-                
+                    titileLbl.Font = Setting.sstitleFont;
+                titileLbl.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(result.key);   //单词英文
+
                 if (result.psLen > 0)
-                    label2.Text = "| " + result.ps[0] + " |";   // 音标
+                    accentLbl.Text = "| " + result.ps[0] + " |";   // 音标
                                                                 // 释义
                 transBox.Clear();
+
                 for (int i = 0; i < result.posLen; i++)
                 {
                     transBox.AppendText(result.pos[i] + result.acceptation[i]);
@@ -81,6 +116,44 @@ namespace IDictionary
             }
         }
 
+        private void inputBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+            {
+                e.Handled = true;
+                string query = inputBox.Text;           
+                ShowTrans(query);
+                shortInputBox.Focus();
+            }
+        }
+        // find matching words
+        private void inputBox_TextChanged(object sender, EventArgs e)
+        {
+            hisListBox.Items.Clear();
+            string prefix = inputBox.Text;
+            if (prefix.Length > 0)
+            {
+                string pattern = "^[^a-zA-z]*" + prefix + "[a-zA-Z]*";
+                Regex r = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.Multiline);
+                Match m = r.Match(dic);
+                int matchCount = 0;
+
+                while (m.Success && matchCount < maxSuggest)
+                {
+                    hisListBox.Items.Add(m.Value);
+                    m = m.NextMatch();
+                    matchCount++;
+                }
+                if (hisPanel.Visible == false) hisPanel.Visible = true;
+            }
+            else
+            {
+                hisPanel.Visible = false;
+            }
+        }
+        //
+        //
+
         private void hisListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int index = hisListBox.IndexFromPoint(e.Location);
@@ -94,7 +167,9 @@ namespace IDictionary
             
         }
 
+        //
         // change button image
+        //
         private void deleteBtn_MouseEnter(object sender, EventArgs e)
         {
             deleteBtn.Image = Properties.Resources.deleteButtonClicked;
@@ -124,6 +199,8 @@ namespace IDictionary
         {
             settingBtn.Image = Properties.Resources.settingIcon;
         }
+        //
+        //
 
         // short inputbox -> long inputbox
         private void shortInputBox_TextChanged(object sender, EventArgs e)
@@ -147,6 +224,8 @@ namespace IDictionary
         {
             settingPanel.Visible = !settingPanel.Visible;
             hisPanel.Visible = false;
+            searchSetpanel.Visible = false;
+            fontSetpanel.Visible = false;
         }
 
         private void ListBoxAddItems(List<string> targetList)
@@ -177,52 +256,55 @@ namespace IDictionary
             if (hisListBox.IndexFromPoint(e.Location) == -1) hisListBox.ClearSelected();
         }
 
-        // find matching words
-        private void inputBox_TextChanged(object sender, EventArgs e)
-        {
-            hisListBox.Items.Clear();
-            string prefix = inputBox.Text;
-            if(prefix.Length >0)
-            {
-                string pattern = "^"+prefix + "[a-zA-Z]*";
-                Regex r = new Regex(pattern, RegexOptions.IgnoreCase|RegexOptions.Multiline);
-                Match m = r.Match(dic);
-                int matchCount = 0;
 
-                while (m.Success && matchCount < 12)
-                {
-                    hisListBox.Items.Add(m.Value);
-                    m = m.NextMatch();
-                    matchCount++;
-                }
-                if (hisPanel.Visible == false) hisPanel.Visible = true;
-            }
-            else
-            {
-                hisPanel.Visible = false;
-            }
-        }
 
         // save history
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            fileIO.SaveToFile(history);
+            try
+            {
+                fileIO.SaveToFile(history);
+                fileIO.SaveSettingToFile(Setting);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Properties.Resources.fileError);
+                throw;
+            }
         }
 
         // create history.txt
         private void Form1_Load(object sender, EventArgs e)
         {
-            fileIO.createFile(Setting.hisPath);
+            try
+            {
+                fileIO.createFile();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Properties.Resources.fileError);
+            }
         }
 
-        // empty histroy button click event
+
+        //
+        // setting panel
+        //
         private void emptyHisBtn_MouseClick(object sender, MouseEventArgs e)
         {
             if (MessageBox.Show("确认删除？", "Confirm Message", 
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
             {
-                fileIO.EmptyHistory();
-                history = fileIO.GetHistoryList();
+                try
+                {
+                    fileIO.EmptyHistory();
+                    history = fileIO.GetHistoryList();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(Properties.Resources.fileError);
+                    throw;
+                }
                 MessageBox.Show(Properties.Resources.emptyHis);
             }
             
@@ -247,7 +329,7 @@ namespace IDictionary
                 try
                 {
                     fileIO.SaveToFile(history);
-                    File.Copy(Setting.hisPath, saveFileDialog1.FileName);
+                    File.Copy(hisPath, saveFileDialog1.FileName);
                 }
                 catch (Exception)
                 {
@@ -267,8 +349,129 @@ namespace IDictionary
         }
 
         private void fontSetBtn_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show(Properties.Resources.fontSetStr);
+        {    
+            fontSetpanel.Visible = !fontSetpanel.Visible;
+            searchSetpanel.Visible = false;
         }
+
+        private void suggestSetBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            searchSetpanel.Visible = !searchSetpanel.Visible;
+            fontSetpanel.Visible = false;
+        }
+      
+
+
+        //
+        // font edit 
+        //
+        private void SelectedFont(Label lbl)
+        {
+            fontDialog1.Font = lbl.Font;
+            DialogResult result = fontDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                lbl.Font = fontDialog1.Font;
+            }
+        }
+
+        private void titleFontEditLbl_MouseClick(object sender, MouseEventArgs e)
+        {
+            titleFontEditLbl.ForeColor = Color.Black;
+            SelectedFont(titleFontEditLbl);
+        }
+
+        private void accentFontEditLbl_MouseClick(object sender, MouseEventArgs e)
+        {
+            accentFontEditLbl.ForeColor = Color.Black;
+            SelectedFont(accentFontEditLbl);
+        }
+
+        private void transFontEditlbl_Click(object sender, EventArgs e)
+        {
+            transFontEditlbl.ForeColor = Color.Black;
+            SelectedFont(transFontEditlbl);
+        }
+
+        private void titleFontEditLbl_MouseEnter(object sender, EventArgs e)
+        {
+            titleFontEditLbl.ForeColor = Color.MidnightBlue;
+        }
+
+        private void titleFontEditLbl_MouseLeave(object sender, EventArgs e)
+        {
+            titleFontEditLbl.ForeColor = Color.Black;
+        }
+
+        private void accentFontEditLbl_MouseEnter(object sender, EventArgs e)
+        {
+            accentFontEditLbl.ForeColor = Color.MidnightBlue;
+        }
+
+        private void accentFontEditLbl_MouseLeave(object sender, EventArgs e)
+        {
+            accentFontEditLbl.ForeColor = Color.Black;
+        }
+
+        private void transFontEditlbl_MouseEnter(object sender, EventArgs e)
+        {
+            transFontEditlbl.ForeColor = Color.MidnightBlue;
+        }
+
+        private void transFontEditlbl_MouseLeave(object sender, EventArgs e)
+        {
+            transFontEditlbl.ForeColor = Color.Black;
+        }
+
+        private void confirmEditBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Setting.titleFont = titleFontEditLbl.Font;
+                Setting.accentFont = accentFontEditLbl.Font;
+                Setting.transFont = transFontEditlbl.Font;
+                this.LoadFont();
+                this.Validate();
+                MessageBox.Show("字体修改成功");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("字体修改失败");
+            }
+        }
+
+        private void resetFontBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Setting.titleFont = Setting.ctitleFont;
+                Setting.accentFont = Setting.caccentFont;
+                Setting.transFont = Setting.ctransFont;
+                this.LoadFont();
+                this.Validate();
+                MessageBox.Show("字体已恢复为默认配置");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("字体恢复失败");
+            }
+        }
+        
+
+        // maxSuggest
+        private void numConfirmBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Setting.maxSuggest = (int)sugNumericUpDown.Value;
+                this.LoadSearchSetting();
+                MessageBox.Show("修改成功");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("修改失败");
+            }
+        }
+       
     }
 }

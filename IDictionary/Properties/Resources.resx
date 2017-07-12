@@ -117,27 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="SeparatedLine" xml:space="preserve">
+    <value>--------------------------------------</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="deleteButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deleteButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="searchBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\searchBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dtafalonso_Android_Lollipop_Dictionary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dtafalonso-Android-Lollipop-Dictionary.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="longsearchBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\longsearchBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settingIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settingIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="menuIconClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuIconCliked4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="emptyHis" xml:space="preserve">
+    <value>历史纪录已清空</value>
+  </data>
+  <data name="fileError" xml:space="preserve">
+    <value>访问历史文件出错，请尝试已管理员身份运行</value>
+  </data>
+  <data name="words" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\words.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
   <data name="menuIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="searchBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searchBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deleteButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deleteButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feedBackIntro" xml:space="preserve">
+    <value>您可以发送邮件至：idictionary.app@gmail.com
+反馈您发现的Bug，或向我们提出建议。</value>
+  </data>
   <data name="deleteButtonClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deleteButtonClicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dtafalonso_Android_Lollipop_Dictionary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dtafalonso-Android-Lollipop-Dictionary.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>IDictionary v1.3.0                                      --------------------
+This is a simple tool to look up a simple word</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Dictionary</value>
   </data>
   <data name="WelcomeDoc" xml:space="preserve">
     <value>: )  欢迎使用词典
@@ -147,39 +173,16 @@
 : (  支持英译汉（部分支持汉译英）
 : }  发现Bug可联系我</value>
   </data>
-  <data name="menuIconClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menuIconCliked4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="updateLink" xml:space="preserve">
+    <value>https://github.com/Zeqiang-Lai/IDictionary/releases</value>
   </data>
   <data name="settingIconClicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settingIconClicked2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>Dictionary</value>
-  </data>
   <data name="InitialAccent" xml:space="preserve">
     <value>| Hello |</value>
   </data>
-  <data name="SeparatedLine" xml:space="preserve">
-    <value>--------------------------------------</value>
-  </data>
-  <data name="words" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\words.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
-  </data>
-  <data name="emptyHis" xml:space="preserve">
-    <value>历史纪录已清空</value>
-  </data>
-  <data name="about" xml:space="preserve">
-    <value>IDictionary v1.2.0                                                               --------------------
-This is a simple tool to look up a simple word</value>
-  </data>
-  <data name="feedBackIntro" xml:space="preserve">
-    <value>您可以发送邮件至：idictionary.app@gmail.com
-反馈您发现的Bug，或向我们提出建议。</value>
-  </data>
-  <data name="fontSetStr" xml:space="preserve">
-    <value>将在后续版本中加入此功能。</value>
-  </data>
-  <data name="updateLink" xml:space="preserve">
-    <value>https://github.com/Zeqiang-Lai/IDictionary/releases</value>
+  <data name="Untitled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Untitled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

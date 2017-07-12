@@ -41,11 +41,25 @@
             this.hisPanel = new System.Windows.Forms.Panel();
             this.hisListBox = new System.Windows.Forms.ListBox();
             this.wordPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.titileLbl = new System.Windows.Forms.Label();
+            this.accentLbl = new System.Windows.Forms.Label();
             this.transBox = new System.Windows.Forms.RichTextBox();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.settingPanel = new System.Windows.Forms.Panel();
+            this.fontSetpanel = new System.Windows.Forms.Panel();
+            this.resetFontBtn = new System.Windows.Forms.Button();
+            this.confirmEditBtn = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.transFontEditlbl = new System.Windows.Forms.Label();
+            this.accentFontEditLbl = new System.Windows.Forms.Label();
+            this.titleFontEditLbl = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.searchSetpanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.numConfirmBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.sugNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.suggestSetBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.getUpdateBtn = new System.Windows.Forms.Button();
             this.aboutBtn = new System.Windows.Forms.Button();
@@ -54,6 +68,7 @@
             this.exportHisBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.emptyHisBtn = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.buttomPanel.SuspendLayout();
             this.searchPlusPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingBtn)).BeginInit();
@@ -65,6 +80,11 @@
             this.wordPanel.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.settingPanel.SuspendLayout();
+            this.fontSetpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.searchSetpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sugNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // buttomPanel
@@ -176,7 +196,7 @@
             // hisPanel
             // 
             this.hisPanel.Controls.Add(this.hisListBox);
-            this.hisPanel.Location = new System.Drawing.Point(1, 1);
+            this.hisPanel.Location = new System.Drawing.Point(0, 0);
             this.hisPanel.Name = "hisPanel";
             this.hisPanel.Size = new System.Drawing.Size(287, 386);
             this.hisPanel.TabIndex = 6;
@@ -197,33 +217,33 @@
             // 
             // wordPanel
             // 
-            this.wordPanel.Controls.Add(this.label1);
-            this.wordPanel.Controls.Add(this.label2);
+            this.wordPanel.Controls.Add(this.titileLbl);
+            this.wordPanel.Controls.Add(this.accentLbl);
             this.wordPanel.Controls.Add(this.transBox);
-            this.wordPanel.Location = new System.Drawing.Point(1, 1);
+            this.wordPanel.Location = new System.Drawing.Point(0, 0);
             this.wordPanel.Name = "wordPanel";
             this.wordPanel.Size = new System.Drawing.Size(287, 386);
             this.wordPanel.TabIndex = 2;
             // 
-            // label1
+            // titileLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Candara", 36.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 60);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dictionary";
+            this.titileLbl.AutoSize = true;
+            this.titileLbl.Font = new System.Drawing.Font("Candara", 36.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titileLbl.Location = new System.Drawing.Point(4, 9);
+            this.titileLbl.Name = "titileLbl";
+            this.titileLbl.Size = new System.Drawing.Size(242, 60);
+            this.titileLbl.TabIndex = 0;
+            this.titileLbl.Text = "Dictionary";
             // 
-            // label2
+            // accentLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Baskerville Old Face", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 19);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "| Hello |";
+            this.accentLbl.AutoSize = true;
+            this.accentLbl.Font = new System.Drawing.Font("Baskerville Old Face", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accentLbl.Location = new System.Drawing.Point(11, 79);
+            this.accentLbl.Name = "accentLbl";
+            this.accentLbl.Size = new System.Drawing.Size(83, 19);
+            this.accentLbl.TabIndex = 5;
+            this.accentLbl.Text = "| Hello |";
             // 
             // transBox
             // 
@@ -253,6 +273,9 @@
             // settingPanel
             // 
             this.settingPanel.BackColor = System.Drawing.Color.White;
+            this.settingPanel.Controls.Add(this.fontSetpanel);
+            this.settingPanel.Controls.Add(this.searchSetpanel);
+            this.settingPanel.Controls.Add(this.suggestSetBtn);
             this.settingPanel.Controls.Add(this.label4);
             this.settingPanel.Controls.Add(this.getUpdateBtn);
             this.settingPanel.Controls.Add(this.aboutBtn);
@@ -261,22 +284,208 @@
             this.settingPanel.Controls.Add(this.exportHisBtn);
             this.settingPanel.Controls.Add(this.label3);
             this.settingPanel.Controls.Add(this.emptyHisBtn);
-            this.settingPanel.Location = new System.Drawing.Point(0, 2);
+            this.settingPanel.Location = new System.Drawing.Point(0, 0);
             this.settingPanel.Name = "settingPanel";
             this.settingPanel.Size = new System.Drawing.Size(287, 386);
             this.settingPanel.TabIndex = 1;
+            this.settingPanel.TabStop = true;
             this.settingPanel.Visible = false;
+            // 
+            // fontSetpanel
+            // 
+            this.fontSetpanel.Controls.Add(this.resetFontBtn);
+            this.fontSetpanel.Controls.Add(this.confirmEditBtn);
+            this.fontSetpanel.Controls.Add(this.label9);
+            this.fontSetpanel.Controls.Add(this.transFontEditlbl);
+            this.fontSetpanel.Controls.Add(this.accentFontEditLbl);
+            this.fontSetpanel.Controls.Add(this.titleFontEditLbl);
+            this.fontSetpanel.Controls.Add(this.pictureBox3);
+            this.fontSetpanel.Location = new System.Drawing.Point(131, 84);
+            this.fontSetpanel.Name = "fontSetpanel";
+            this.fontSetpanel.Size = new System.Drawing.Size(144, 200);
+            this.fontSetpanel.TabIndex = 10;
+            this.fontSetpanel.TabStop = true;
+            this.fontSetpanel.Visible = false;
+            // 
+            // resetFontBtn
+            // 
+            this.resetFontBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resetFontBtn.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.resetFontBtn.Location = new System.Drawing.Point(86, 160);
+            this.resetFontBtn.Name = "resetFontBtn";
+            this.resetFontBtn.Size = new System.Drawing.Size(48, 26);
+            this.resetFontBtn.TabIndex = 9;
+            this.resetFontBtn.Text = "恢复";
+            this.resetFontBtn.UseVisualStyleBackColor = true;
+            this.resetFontBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.resetFontBtn_MouseClick);
+            // 
+            // confirmEditBtn
+            // 
+            this.confirmEditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmEditBtn.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.confirmEditBtn.Location = new System.Drawing.Point(24, 160);
+            this.confirmEditBtn.Name = "confirmEditBtn";
+            this.confirmEditBtn.Size = new System.Drawing.Size(53, 26);
+            this.confirmEditBtn.TabIndex = 8;
+            this.confirmEditBtn.Text = "确认";
+            this.confirmEditBtn.UseVisualStyleBackColor = true;
+            this.confirmEditBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.confirmEditBtn_MouseClick);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(19, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 20);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "预览";
+            // 
+            // transFontEditlbl
+            // 
+            this.transFontEditlbl.AutoSize = true;
+            this.transFontEditlbl.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.transFontEditlbl.Location = new System.Drawing.Point(22, 106);
+            this.transFontEditlbl.Name = "transFontEditlbl";
+            this.transFontEditlbl.Size = new System.Drawing.Size(80, 38);
+            this.transFontEditlbl.TabIndex = 6;
+            this.transFontEditlbl.Text = "Translation \r\n翻译";
+            this.transFontEditlbl.Click += new System.EventHandler(this.transFontEditlbl_Click);
+            this.transFontEditlbl.MouseEnter += new System.EventHandler(this.transFontEditlbl_MouseEnter);
+            this.transFontEditlbl.MouseLeave += new System.EventHandler(this.transFontEditlbl_MouseLeave);
+            // 
+            // accentFontEditLbl
+            // 
+            this.accentFontEditLbl.AutoSize = true;
+            this.accentFontEditLbl.Font = new System.Drawing.Font("Baskerville Old Face", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accentFontEditLbl.Location = new System.Drawing.Point(23, 81);
+            this.accentFontEditLbl.Name = "accentFontEditLbl";
+            this.accentFontEditLbl.Size = new System.Drawing.Size(55, 19);
+            this.accentFontEditLbl.TabIndex = 5;
+            this.accentFontEditLbl.Text = "accent ";
+            this.accentFontEditLbl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.accentFontEditLbl_MouseClick);
+            this.accentFontEditLbl.MouseEnter += new System.EventHandler(this.accentFontEditLbl_MouseEnter);
+            this.accentFontEditLbl.MouseLeave += new System.EventHandler(this.accentFontEditLbl_MouseLeave);
+            // 
+            // titleFontEditLbl
+            // 
+            this.titleFontEditLbl.AutoSize = true;
+            this.titleFontEditLbl.Font = new System.Drawing.Font("Candara", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleFontEditLbl.ForeColor = System.Drawing.Color.Black;
+            this.titleFontEditLbl.Location = new System.Drawing.Point(11, 21);
+            this.titleFontEditLbl.Name = "titleFontEditLbl";
+            this.titleFontEditLbl.Size = new System.Drawing.Size(123, 49);
+            this.titleFontEditLbl.TabIndex = 4;
+            this.titleFontEditLbl.Text = "Word ";
+            this.titleFontEditLbl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.titleFontEditLbl_MouseClick);
+            this.titleFontEditLbl.MouseEnter += new System.EventHandler(this.titleFontEditLbl_MouseEnter);
+            this.titleFontEditLbl.MouseLeave += new System.EventHandler(this.titleFontEditLbl_MouseLeave);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::IDictionary.Properties.Resources.Untitled;
+            this.pictureBox3.Location = new System.Drawing.Point(5, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(5, 200);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // searchSetpanel
+            // 
+            this.searchSetpanel.Controls.Add(this.pictureBox2);
+            this.searchSetpanel.Controls.Add(this.numConfirmBtn);
+            this.searchSetpanel.Controls.Add(this.label5);
+            this.searchSetpanel.Controls.Add(this.sugNumericUpDown);
+            this.searchSetpanel.Location = new System.Drawing.Point(131, 84);
+            this.searchSetpanel.Name = "searchSetpanel";
+            this.searchSetpanel.Size = new System.Drawing.Size(138, 200);
+            this.searchSetpanel.TabIndex = 9;
+            this.searchSetpanel.TabStop = true;
+            this.searchSetpanel.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::IDictionary.Properties.Resources.Untitled;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(5, 200);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // numConfirmBtn
+            // 
+            this.numConfirmBtn.BackColor = System.Drawing.Color.White;
+            this.numConfirmBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.numConfirmBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.numConfirmBtn.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numConfirmBtn.Location = new System.Drawing.Point(79, 26);
+            this.numConfirmBtn.Name = "numConfirmBtn";
+            this.numConfirmBtn.Size = new System.Drawing.Size(48, 25);
+            this.numConfirmBtn.TabIndex = 2;
+            this.numConfirmBtn.Text = "确认修改";
+            this.numConfirmBtn.UseVisualStyleBackColor = false;
+            this.numConfirmBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.numConfirmBtn_MouseClick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(21, 2);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 19);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "最大建议词条数目";
+            // 
+            // sugNumericUpDown
+            // 
+            this.sugNumericUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sugNumericUpDown.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sugNumericUpDown.Location = new System.Drawing.Point(26, 26);
+            this.sugNumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.sugNumericUpDown.Name = "sugNumericUpDown";
+            this.sugNumericUpDown.Size = new System.Drawing.Size(45, 25);
+            this.sugNumericUpDown.TabIndex = 0;
+            this.sugNumericUpDown.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // suggestSetBtn
+            // 
+            this.suggestSetBtn.BackColor = System.Drawing.Color.Transparent;
+            this.suggestSetBtn.FlatAppearance.BorderSize = 0;
+            this.suggestSetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.suggestSetBtn.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.suggestSetBtn.ForeColor = System.Drawing.Color.Black;
+            this.suggestSetBtn.Location = new System.Drawing.Point(21, 113);
+            this.suggestSetBtn.Name = "suggestSetBtn";
+            this.suggestSetBtn.Size = new System.Drawing.Size(114, 26);
+            this.suggestSetBtn.TabIndex = 2;
+            this.suggestSetBtn.TabStop = false;
+            this.suggestSetBtn.Text = "搜索设置";
+            this.suggestSetBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.suggestSetBtn.UseVisualStyleBackColor = false;
+            this.suggestSetBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.suggestSetBtn_MouseClick);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(27, 289);
+            this.label4.Location = new System.Drawing.Point(27, 314);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 17);
             this.label4.TabIndex = 7;
-            this.label4.Text = "IDictionary v1.2.0";
+            this.label4.Text = "IDictionary v1.3.0";
             // 
             // getUpdateBtn
             // 
@@ -285,10 +494,11 @@
             this.getUpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.getUpdateBtn.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.getUpdateBtn.ForeColor = System.Drawing.Color.Black;
-            this.getUpdateBtn.Location = new System.Drawing.Point(21, 205);
+            this.getUpdateBtn.Location = new System.Drawing.Point(21, 229);
             this.getUpdateBtn.Name = "getUpdateBtn";
             this.getUpdateBtn.Size = new System.Drawing.Size(114, 26);
             this.getUpdateBtn.TabIndex = 6;
+            this.getUpdateBtn.TabStop = false;
             this.getUpdateBtn.Text = "获取更新";
             this.getUpdateBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.getUpdateBtn.UseVisualStyleBackColor = false;
@@ -301,10 +511,11 @@
             this.aboutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aboutBtn.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.aboutBtn.ForeColor = System.Drawing.Color.Black;
-            this.aboutBtn.Location = new System.Drawing.Point(21, 236);
+            this.aboutBtn.Location = new System.Drawing.Point(21, 258);
             this.aboutBtn.Name = "aboutBtn";
             this.aboutBtn.Size = new System.Drawing.Size(114, 26);
-            this.aboutBtn.TabIndex = 5;
+            this.aboutBtn.TabIndex = 7;
+            this.aboutBtn.TabStop = false;
             this.aboutBtn.Text = "关于";
             this.aboutBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.aboutBtn.UseVisualStyleBackColor = false;
@@ -317,10 +528,11 @@
             this.emailFBBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emailFBBtn.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.emailFBBtn.ForeColor = System.Drawing.Color.Black;
-            this.emailFBBtn.Location = new System.Drawing.Point(21, 174);
+            this.emailFBBtn.Location = new System.Drawing.Point(21, 200);
             this.emailFBBtn.Name = "emailFBBtn";
             this.emailFBBtn.Size = new System.Drawing.Size(114, 26);
-            this.emailFBBtn.TabIndex = 4;
+            this.emailFBBtn.TabIndex = 5;
+            this.emailFBBtn.TabStop = false;
             this.emailFBBtn.Text = "邮件反馈";
             this.emailFBBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.emailFBBtn.UseVisualStyleBackColor = false;
@@ -333,10 +545,11 @@
             this.fontSetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fontSetBtn.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.fontSetBtn.ForeColor = System.Drawing.Color.Black;
-            this.fontSetBtn.Location = new System.Drawing.Point(21, 81);
+            this.fontSetBtn.Location = new System.Drawing.Point(21, 84);
             this.fontSetBtn.Name = "fontSetBtn";
             this.fontSetBtn.Size = new System.Drawing.Size(114, 26);
-            this.fontSetBtn.TabIndex = 3;
+            this.fontSetBtn.TabIndex = 1;
+            this.fontSetBtn.TabStop = false;
             this.fontSetBtn.Text = "字体设置";
             this.fontSetBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.fontSetBtn.UseVisualStyleBackColor = false;
@@ -349,10 +562,11 @@
             this.exportHisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exportHisBtn.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exportHisBtn.ForeColor = System.Drawing.Color.Black;
-            this.exportHisBtn.Location = new System.Drawing.Point(21, 112);
+            this.exportHisBtn.Location = new System.Drawing.Point(21, 142);
             this.exportHisBtn.Name = "exportHisBtn";
             this.exportHisBtn.Size = new System.Drawing.Size(114, 26);
-            this.exportHisBtn.TabIndex = 2;
+            this.exportHisBtn.TabIndex = 3;
+            this.exportHisBtn.TabStop = false;
             this.exportHisBtn.Text = "导出历史纪录";
             this.exportHisBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.exportHisBtn.UseVisualStyleBackColor = false;
@@ -375,14 +589,20 @@
             this.emptyHisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.emptyHisBtn.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.emptyHisBtn.ForeColor = System.Drawing.Color.Firebrick;
-            this.emptyHisBtn.Location = new System.Drawing.Point(21, 143);
+            this.emptyHisBtn.Location = new System.Drawing.Point(21, 171);
             this.emptyHisBtn.Name = "emptyHisBtn";
             this.emptyHisBtn.Size = new System.Drawing.Size(114, 26);
-            this.emptyHisBtn.TabIndex = 0;
+            this.emptyHisBtn.TabIndex = 4;
+            this.emptyHisBtn.TabStop = false;
             this.emptyHisBtn.Text = "清空历史记录";
             this.emptyHisBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.emptyHisBtn.UseVisualStyleBackColor = false;
             this.emptyHisBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.emptyHisBtn_MouseClick);
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.MaxSize = 35;
+            this.fontDialog1.ShowEffects = false;
             // 
             // Form1
             // 
@@ -416,6 +636,13 @@
             this.contentPanel.ResumeLayout(false);
             this.settingPanel.ResumeLayout(false);
             this.settingPanel.PerformLayout();
+            this.fontSetpanel.ResumeLayout(false);
+            this.fontSetpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.searchSetpanel.ResumeLayout(false);
+            this.searchSetpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sugNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,8 +661,8 @@
         private System.Windows.Forms.Panel hisPanel;
         private System.Windows.Forms.ListBox hisListBox;
         private System.Windows.Forms.Panel wordPanel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label titileLbl;
+        private System.Windows.Forms.Label accentLbl;
         private System.Windows.Forms.RichTextBox transBox;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.Panel settingPanel;
@@ -447,6 +674,21 @@
         private System.Windows.Forms.Button fontSetBtn;
         private System.Windows.Forms.Button exportHisBtn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button suggestSetBtn;
+        private System.Windows.Forms.Panel searchSetpanel;
+        private System.Windows.Forms.NumericUpDown sugNumericUpDown;
+        private System.Windows.Forms.Button numConfirmBtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel fontSetpanel;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label transFontEditlbl;
+        private System.Windows.Forms.Label accentFontEditLbl;
+        private System.Windows.Forms.Label titleFontEditLbl;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button confirmEditBtn;
+        private System.Windows.Forms.Button resetFontBtn;
     }
 }
 
