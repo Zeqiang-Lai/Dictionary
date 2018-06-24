@@ -6,25 +6,24 @@ body {
 
 .header-right {
     display: none;
+    /* display: block;
+    float: right;
+    padding: 6px 20px; */
 }
 
 .navbar-item {
-    color: #ffffff;
+    color: #000;
     padding: 10px;
 }
 
 .navbar-item:hover {
-    color: #58d5f7;
+    color: #a0b5bb;
     text-decoration: none;
 }
 
 .hero-background {
     overflow: hidden;
     position: relative;
-    background: -webkit-linear-gradient(117deg, rgb(96, 87, 246), rgb(216, 71, 99));
-    background: linear-gradient(117deg, rgb(96, 87, 246), rgb(216, 71, 99));
-    background: -webkit-radial-gradient(rgb(194, 74, 126), rgb(105, 86, 235));
-    background: radial-gradient(rgb(194, 74, 126), rgb(105, 86, 235));
 }
 
 .bold {
@@ -90,7 +89,7 @@ body {
 }
 
 .hero-right {
-    color: #fff;
+    color: #000;
     text-align: center;
 }
 
@@ -105,18 +104,18 @@ body {
 .hero-btn {
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    background-color: #25F18B;
+    background-color: #fff;
     border-radius: 10px;
-    border: 1px solid #25F18B;
+    border: 1px solid #000;
     width: 210px;
     height: 51px;
-    color: white;
+    color: black;
     margin: 30px auto;
 }
 
 .hero-btn:hover {
-    background-color: #6affb4;
-    color: white;
+    background-color: #fff;
+    color: black;
     border-radius: 20px;
     -webkit-box-shadow: -1px 9px 46px -17px rgba(43, 43, 43, 1);
     -moz-box-shadow: -1px 9px 46px -17px rgba(43, 43, 43, 1);
