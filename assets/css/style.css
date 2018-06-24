@@ -50,16 +50,7 @@ body {
 }
 
 .header-btn {
-    background-color: #0ABCEB;
-    border-radius: 10px;
-    border: #0ABCEB;
-    float: right;
-    width: 195px;
-    height: 51px;
-    color: white;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    margin-top: -10px;
+    display: none;
 }
 
 .header-btn:hover {
