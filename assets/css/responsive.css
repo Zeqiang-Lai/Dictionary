@@ -61,6 +61,15 @@
         right: 1px;
     }
 
+    .img-left {
+        display: none;
+    }
+    
+    .img-right {
+        display: block;
+    }
+
+    
     .feature-section {
         padding-top: 60px;
     }

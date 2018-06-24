@@ -254,6 +254,14 @@ body {
     padding-bottom: 40px;
 }
 
+.img-left {
+    display: block;
+}
+
+.img-right {
+    display: none;
+}
+
 .macbook {
     position: relative;
     z-index: 999;
